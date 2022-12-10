@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+<h1>Blogs</h1>
+<div class="row">
+<div class="col-md-4">
+<div class="card mb-2">
+{% for post in object_list %}
+<div class="card-body">
+    <h4>{{ post.title }}</h4>
+<img src="{{ post.cover.url}}" alt="{{ post.title }}">
+<p>{{ post.detail }}</p>
+</div>
+</div>
+</div>
+{% endfor %}
+</div>
+{% endblock %}
+</body>
+</html>
